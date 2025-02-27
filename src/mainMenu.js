@@ -8,15 +8,16 @@ export class MainMenu extends Phaser.Scene {
 
     preload() {
       /*   this.load.audio('bgSound', 'assets/audios/This Jazz Long Loop.wav')
-        this.load.image('bgImage','assets/3690.jpg') */
+      */
+       this.load.image('bgImage','assets/images/snk(1).png');
 
     }
 
     create() {
         
+        this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 5,'bgImage');
       /*   //* Background sound play loop
         let bgSound = this.sound.get('bgSound'); // Check if sound already exists
-        this.add.image(400,300,'bgImage');
 
         if (!bgSound) {
             bgSound = this.sound.add('bgSound', { loop: true }); // Create and loop it
@@ -26,9 +27,11 @@ export class MainMenu extends Phaser.Scene {
         } */
 
         // Create the title text in the center of the scene
-        const title = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 5, "Memory Game", {
+        const title = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 4.5, "  Spot The \n Difference", {
             fontSize: '48px',
-            fill: '#fff'
+            fontStyle:'bold',
+            fill: 'lightgreen',
+            align: 'center'
         })
             .setOrigin(0.5, 0.5); // Center the title on the x and y axes
 
@@ -36,7 +39,7 @@ export class MainMenu extends Phaser.Scene {
         const playButton = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 3.5 + 100, "Play", {
             fontSize: '32px',
             fontStyle:'bold',
-            fill: '#2b8'
+            fill: 'black'
         })
             .setOrigin(0.5, 0.5) // Center the button
             .setInteractive()
@@ -49,7 +52,7 @@ export class MainMenu extends Phaser.Scene {
         playButton.on("pointerover", () => {
             playButton.setStyle({ fill: "#ff0" }); // Change to yellow when hovered
         }).on("pointerout", () => {
-            playButton.setStyle({ fill: "#2b8" }); // Change back to green when mouse leaves
+            playButton.setStyle({ fill: "black" }); // Change back to green when mouse leaves
         });
     }
 }
