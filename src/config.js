@@ -1,15 +1,17 @@
 import Phaser from 'phaser';
-import { MainMenu } from './mainMenu';
-import { PlayerWon } from './playerWon';
-import { PlayerLost } from './playerLoss';
-import { GamePlayScene } from './gamePlayScene';
+import { MainMenu } from './scenes/mainMenu.js';
+import { PlayerWon } from './scenes/playerWon.js';
+import { PlayerLost } from './scenes/playerLoss.js';
+import { GamePlayScene } from './scenes/gamePlayScene.js';
+import { BootScene } from './scenes/bootscene.js';
+
 
 //#endregion
 export const config = {
   type: Phaser.WEBGL,
-  width: 420,
-  height: 728,
-  scene: [MainMenu,GamePlayScene,PlayerWon,PlayerLost],
+  width: 360,
+  height: 640,
+  scene: [BootScene,MainMenu,GamePlayScene,PlayerWon,PlayerLost],
   canvas: gameCanvas,
 };
 
